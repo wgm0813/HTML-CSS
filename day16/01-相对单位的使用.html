@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相对单位的使用</title>
+  <style>
+    .container {
+      font-size: 15px;
+    }
+    .box{
+      /* font-size: 20px; */
+      /* 自己有font-size就相对于自己的，会继承父元素的font-size */
+      /* 1、em相对font-size */
+      width: 10em;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
