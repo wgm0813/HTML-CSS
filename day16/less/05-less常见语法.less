@@ -1,0 +1,90 @@
+// 编写CSS代码
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+// 定义变量 @变量名: 变量值
+@bgColor: #f3c258;
+@bgheight: 100px;
+@bgwidth: 100px;
+@normalFontsize: 20px;
+
+.box{
+  background-color: @bgColor;
+  width: @bgwidth;
+  height: @bgheight;
+}
+
+// 选择器的嵌套 and符号表示当前选择器的父级
+// 嵌套的and符号和使用
+.box {
+  .pel {
+    color: black;
+    font-size: @normalFontsize;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+// 运算
+.box {
+  width: 10%+50px;
+}
+
+// 混入,可传入参数,没有参数的时候可以省略使用的括号
+.nowrap_ellipsis(@borderWidth:5px,@borderColor:black) {
+  // 显示一行，超过宽度的用省略号代替
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  border:@borderWidth solid @borderColor
+}
+.box1{
+  width: 100px;
+  background-color: red;
+
+  .nowrap_ellipsis(1px,green);
+}
+
+// 混入和映射结合使用
+// 作用：弥补less中不能自定义函数的缺陷
+.box_size {
+  width: 100px;
+  height: 100px
+}
+
+.box1{
+  width: .box_size()[width];
+}
+
+// 继承
+.box_border {
+  border:1px solid red;
+}
+
+.box1{
+  width: 100px;
+  &:extend(.box_border);
+}
+
+
+// 内置函数
+.box {
+  color: red;
+  // 官网了解
+}
+
+// 作用域:每一个花括号就是一个作用域，如果自己那一层没有就会再上一层查找
+@cc: red;
+.box {
+  @cc: green;
+  .item {
+    span {
+      color:@cc
+    }
+  }
+}

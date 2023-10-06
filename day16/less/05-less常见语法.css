@@ -1,0 +1,47 @@
+.box {
+  width: 100px;
+  height: 100px;
+}
+.box {
+  background-color: #f3c258;
+  width: 100px;
+  height: 100px;
+}
+.box .pel {
+  color: black;
+  font-size: 20px;
+}
+.box .pel:hover {
+  color: red;
+}
+.box {
+  width: 60%;
+}
+.box1 {
+  width: 100px;
+  background-color: red;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border: 1px solid green;
+}
+.box_size {
+  width: 100px;
+  height: 100px;
+}
+.box1 {
+  width: 100px;
+}
+.box_border,
+.box1 {
+  border: 1px solid red;
+}
+.box1 {
+  width: 100px;
+}
+.box {
+  color: red;
+}
+.box .item span {
+  color: green;
+}
